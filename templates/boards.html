@@ -1,0 +1,23 @@
+{% include 'head.html' %}
+{% include 'navbar.html' %}
+<div class="container">
+    <h1>Boards</h1>
+    <p>Welcome to the Wahui board page!</p>
+    {% if boards %}
+    {% for board in boards %}
+    <div class="board">
+        <a href="{{ board.url }}">
+            <img src="{{ board.url }}" alt="{{ board.name }}">
+        </a>
+        <h2>{{ board.name }}</h2>
+        <p>{{ board.description }}</p>
+        
+    </div>
+{% endfor %}
+    {% else %}
+        <p>There is no board data.</p>
+    {% endif %}
+
+</div>
+
+{% include 'footer.html' %}
